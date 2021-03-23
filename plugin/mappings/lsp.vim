@@ -1,4 +1,4 @@
-nnoremap <silent>       E                :call CocAction('doHover')<CR>
+nnoremap <silent>       P                :call CocAction('doHover')<CR>
 nmap     <silent>       gd               <Plug>(coc-definition)
 nmap     <silent>       gy               <Plug>(coc-type-definition)
 nmap     <silent>       gr               <Plug>(coc-references)
@@ -6,7 +6,7 @@ nmap     <silent>       gm               <Plug>(coc-implementation)
 inoremap <expr><silent> <Tab>            <SID>tab()
 inoremap <expr><silent> <CR>             <SID>enter()
 inoremap <expr><silent> <C-n>            <SID>pumNext()
-inoremap <expr><silent> <C-e>            <SID>pumPrev()
+inoremap <expr><silent> <C-p>            <SID>pumPrev()
 nmap     <silent>       <C-s>            <Plug>(coc-range-select)
 xmap     <silent>       <C-s>            <Plug>(coc-range-select)
 snoremap <silent><expr> <Down>           coc#float#has_scroll() ? coc#float#scroll(1) : "\<Down>"
@@ -40,17 +40,3 @@ endfunction
 function! s:pumPrev() abort
   if pumvisible() | return "\<C-p>" | else | return "\<Esc>O" | endif
 endfunction
-
-" " extensions
-" let g:coc_global_extensions = [
-"   \ 'coc-tsserver',
-"   \ 'coc-rls',
-"   \ 'coc-vimlsp',
-"   \ 'coc-python',
-"   \ 'coc-json',
-"   \ 'coc-yaml',
-"   \ 'coc-tailwindcss',
-"   \ 'coc-snippets',
-"   \ 'coc-git',
-"   \ 'coc-prettier',
-"   \ ]

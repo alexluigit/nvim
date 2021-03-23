@@ -11,18 +11,18 @@ nnoremap <silent>       -             :Lf<Cr>
 " don't jump to next line automatically when press w
 nnoremap <silent>       w             :call alex#settings#checkEOL()<cr>
 " If {count} > 5, j/k(n/e in colemak) motion should be added to jumplist
-noremap <expr>          e             (v:count > 5 ? "m'" . v:count : '') . 'k'
+noremap <expr>          p             (v:count > 5 ? "m'" . v:count : '') . 'k'
 noremap <expr>          n             (v:count > 5 ? "m'" . v:count : '') . 'j'
 " Better visual line moving
 vnoremap <silent>       N             :m '>+1<CR>gv=gv
-vnoremap <silent>       E             :m '<-2<CR>gv=gv
+vnoremap <silent>       P             :m '<-2<CR>gv=gv
 " Colemak fix
 nnoremap                N             J
-noremap                 k             e
-noremap                 '             l
+noremap                 k             p
+noremap                 K             P
 " Bring back n key functionality meanwhile disable n/N motion being added to jumplist
 nnoremap <silent>       <C-n>         :keepj norm! n<cr>
-nnoremap <silent>       <C-e>         :keepj norm! N<cr>
+nnoremap <silent>       <C-p>         :keepj norm! N<cr>
 nnoremap                <F4>          <C-e>
 " Undo/Redo/Repeat last {cmd, macro}
 nnoremap <silent>       u             :silent norm! u<cr>
