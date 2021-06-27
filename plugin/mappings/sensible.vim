@@ -7,7 +7,7 @@ xnoremap                *             ymp:keepj norm! /\V<C-r>=escape(@",'/\')<c
 vnoremap                <             <gv
 vnoremap                >             >gv
 " fast navigation
-nnoremap <silent>       -             :Lf<Cr>
+nnoremap <silent>       -             :Ex<cr>
 " don't jump to next line automatically when press w
 nnoremap <silent>       w             :call alex#settings#checkEOL()<cr>
 " If {count} > 5, j/k(n/e in colemak) motion should be added to jumplist
