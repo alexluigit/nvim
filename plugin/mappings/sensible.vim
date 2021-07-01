@@ -9,7 +9,8 @@ vnoremap                >             >gv
 " fast navigation
 nnoremap <silent>       -             :Ex<cr>
 " don't jump to next line automatically when press w
-nnoremap <silent>       w             :call alex#settings#checkEOL()<cr>
+nnoremap <silent>       f             :call alex#settings#forw_word_no_next_line()<cr>
+nnoremap <silent>       w             :call alex#settings#back_word_no_prev_line()<cr>
 " If {count} > 5, j/k(n/e in colemak) motion should be added to jumplist
 noremap <expr>          p             (v:count > 5 ? "m'" . v:count : '') . 'k'
 noremap <expr>          n             (v:count > 5 ? "m'" . v:count : '') . 'j'

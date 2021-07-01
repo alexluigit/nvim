@@ -19,10 +19,20 @@ function! alex#settings#foldtext() abort
   return s:raquo . s:middot . s:middot . l:lines . l:dashes . ': ' . l:first
 endfunction
 
-function! alex#settings#checkEOL()
+function! alex#settings#forw_word_no_next_line()
     let l:line_before = line(".")
     let l:save_cursor = getpos(".")
     execute "normal! w"
+    let l:line_after = line(".")
+    if l:line_after != l:line_before
+      call setpos('.', l:save_cursor)
+    endif
+endfunction
+
+function! alex#settings#back_word_no_prev_line()
+    let l:line_before = line(".")
+    let l:save_cursor = getpos(".")
+    execute "normal! b"
     let l:line_after = line(".")
     if l:line_after != l:line_before
       call setpos('.', l:save_cursor)
