@@ -13,8 +13,8 @@ nnoremap <silent>        <m-e>        :resize +5<CR>
 " Emacs keybinding
 cnoremap                 <c-a>        <Home>
 cnoremap                 <F5>         <End>
-cnoremap                 <F6>         <Left>
-cnoremap                 <c-o>        <Right>
+cnoremap                 <F6>         <Right>
+cnoremap                 <c-o>        <Left>
 cnoremap                 <c-d>        <Del>
 inoremap                 <c-a>        <Home>
 inoremap                 <F5>         <End>
