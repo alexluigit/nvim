@@ -1,8 +1,8 @@
 let g:wkm = {}
 let g:wkm['<Tab>'] = [ 'za',                                         '"#" buffer' ]
 let g:wkm[' ']   = [ ':Files',                                       'find files' ]
-let g:wkm['/']   = [ ':call whichkey#fix("comment")',                'comment' ]
-let g:wkm[';']   = [ ':Commands',                                    'commands' ]
+let g:wkm[';']   = [ ':call whichkey#fix("comment")',                'comment' ]
+let g:wkm['/']   = [ ':Commands',                                    'commands' ]
 let g:wkm["i"]   = [ ':bnext',                                       'next buffer' ]
 let g:wkm['o']   = [ ':bprevious',                                   'prev buffer' ]
 let g:wkm['q']   = [ ':call whichkey#fix("quit")',                   'close buffer']
