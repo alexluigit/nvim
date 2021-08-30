@@ -1,12 +1,12 @@
 augroup BetterFocus
   au!
-  au VimEnter * call alex#autocmds#vim_enter()
+  au VimEnter * call autocmds#vim_enter()
   " Active | inactive windodw
-  au BufEnter,FocusGained,VimEnter,WinEnter * call alex#window#focus()
-  au FocusLost,WinLeave * call alex#window#blur()
+  au BufEnter,FocusGained,VimEnter,WinEnter * call window#focus()
+  au FocusLost,WinLeave * call window#blur()
   " Statusline
-  au BufWinEnter,BufAdd,FocusGained,VimEnter,WinEnter * call alex#statusline#focus()
-  au FocusLost,WinLeave * call alex#statusline#blur()
+  au BufWinEnter,BufAdd,FocusGained,VimEnter,WinEnter * call statusline#focus()
+  au FocusLost,WinLeave * call statusline#blur()
   " Don't show number in vifm/twf
   au TermEnter * setlocal nonu norelativenumber
 augroup end
@@ -20,9 +20,18 @@ augroup Miscellaneous
   " If path doesn't exist, just create it
   au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
   " Highlight yanked content for 500 ms and send OSC52 seqs to tty
-  au TextYankPost * call alex#autocmds#yank_post()
+  au TextYankPost * call autocmds#yank_post()
   " change layout when nvim window resize
   au VimResized * if &ft != 'man' | execute('wincmd =') | endif
   " Update signature help on jump placeholder.
   au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
+
+augroup BufTabLine
+  autocmd!
+  autocmd VimEnter  * call buftabline#update(0)
+  autocmd TabEnter  * call buftabline#update(0)
+  autocmd BufAdd    * call buftabline#update(0)
+  autocmd FileType qf call buftabline#update(0)
+  autocmd BufDelete * call buftabline#update(str2nr(expand('<abuf>')))
+augroup END

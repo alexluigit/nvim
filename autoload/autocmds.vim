@@ -1,7 +1,7 @@
-function! alex#autocmds#vim_enter() abort
+function! autocmds#vim_enter() abort
   set stl=%#Normal#
   exec "WipeReg"
-  call alex#git#cd(expand("%"))
+  call git#cd(expand("%"))
   if &ft=="man"
     call man#show_toc()
     wincmd H | vert res 40 | setl stl= | wincmd l
@@ -11,7 +11,7 @@ function! alex#autocmds#vim_enter() abort
   if argc() == 0 | execute('Files') | return | endif
 endfunction
 
-function! alex#autocmds#yank_post() abort
+function! autocmds#yank_post() abort
   lua vim.highlight.on_yank { "IncSearch", 700 }
   if v:event.operator !~ "y" | return | endif
   call system('xclip -selection clipboard', @0)

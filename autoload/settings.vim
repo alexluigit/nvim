@@ -12,14 +12,14 @@ let s:small_l='ℓ'
 "
 "   »··[2ℓ]··: source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim···································
 "
-function! alex#settings#foldtext() abort
+function! settings#foldtext() abort
   let l:lines='[' . (v:foldend - v:foldstart + 1) . s:small_l . ']'
   let l:first=substitute(getline(v:foldstart), '\v *', '', '')
   let l:dashes=substitute(v:folddashes, '-', s:middot, 'g')
   return s:raquo . s:middot . s:middot . l:lines . l:dashes . ': ' . l:first
 endfunction
 
-function! alex#settings#forw_word_no_next_line()
+function! settings#forw_word_no_next_line()
     let l:line_before = line(".")
     let l:save_cursor = getpos(".")
     execute "normal! w"
@@ -29,7 +29,7 @@ function! alex#settings#forw_word_no_next_line()
     endif
 endfunction
 
-function! alex#settings#back_word_no_prev_line()
+function! settings#back_word_no_prev_line()
     let l:line_before = line(".")
     let l:save_cursor = getpos(".")
     execute "normal! b"

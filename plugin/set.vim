@@ -16,7 +16,7 @@ set timeoutlen=400                          " By default timeoutlen is 1000 ms
 set signcolumn=yes                          " Always show signcolumn
 set foldmethod=indent                       " not as cool as syntax, but faster
 set foldlevelstart=99                       " start unfolded
-set foldtext=alex#settings#foldtext()
+set foldtext=settings#foldtext()
 set termguicolors
 set lazyredraw                              " dont redraw screen during macro execution
 set list

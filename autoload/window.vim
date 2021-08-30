@@ -5,14 +5,14 @@ function! s:ownsyntax() abort
   return &buflisted
 endfunction
 
-function! alex#window#focus()
+function! window#focus()
   if s:ownsyntax()
     ownsyntax on
     exec("ColorizerAttachToBuffer")
   endif
 endfunction
 
-function! alex#window#blur()
+function! window#blur()
   if s:ownsyntax()
     " exec("ColorizerDetachFromBuffer")
     ownsyntax off

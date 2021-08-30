@@ -1,1 +1,1 @@
-require("nvim.boot")
+require("boot")
